@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,9 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Fisher.Bookstore
 {
@@ -18,8 +15,7 @@ namespace Fisher.Bookstore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookstoreContext>(options => options.UseInMemoryDatabase("Books"));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,38 +32,7 @@ namespace Fisher.Bookstore
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}"
                 );
-
             });
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=About}/{action=Index}/{id?}"
-                );
-
-            });
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Books}/{action=Index}/{id?}"
-                );
-
-            });
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Authors}/{action=Index}/{id?}"
-                );
-
-            });
-
-
-
         }
     }
 }
