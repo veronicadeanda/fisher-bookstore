@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Fisher.Bookstore.Models;
+using Fisher.Bookstore.Api.Models;
 using Fisher.Bookstore.Api;
 
 
-namespace Fisher.Bookstore.Data
+namespace Fisher.Bookstore.Api.Data
 {
     public class BookstoreContext : DbContext
     {
