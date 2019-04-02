@@ -1,6 +1,6 @@
 using System;
 
-namespace Fisher.Bookstore.Models
+namespace Fisher.Bookstore.Api.Models
 {
     public class Book
     {
