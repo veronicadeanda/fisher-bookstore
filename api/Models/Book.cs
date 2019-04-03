@@ -21,5 +21,10 @@ namespace Fisher.Bookstore.Api.Models
             this.PublishDate = dateTime;
         }
 
+        public void ChangePublisher(string newPublisher)
+        {
+            this.Publisher = newPublisher;
+        }
+
     }
 }
