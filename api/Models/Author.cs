@@ -12,5 +12,11 @@ namespace Fisher.Bookstore.Api.Models
         public string Bio { get; set; }
         
         public List<Book> Titles { get; set; }
+
+        public void ChangeBio(string newBio)
+        {
+            this.Bio = newBio;
+        }
     }
+
 }
