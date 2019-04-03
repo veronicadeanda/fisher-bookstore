@@ -34,5 +34,33 @@ namespace tests
             Assert.Equal(expectedPublicationDate, actualPublicationDate);
 
         }
+    
+        [Fact]
+        public void ChangePublisher()
+        {
+            //Arrange
+            var book = new Book()
+            {
+                Id = 2,
+                Title = "ABC",
+                Author = new Author()
+                {
+                    Id = 66,
+                    Name = "John Smith"
+                },
+                PublishDate = DateTime.Now,
+                Publisher = "McGraw-Hill"
+            };
+
+            //Act
+            var newPublisher = "Scholastic";
+            book.ChangePublisher(newPublisher);
+
+            //Assert
+            var expectedPublisher = newPublisher;
+            var actualPublisher = book.Publisher;
+
+            Assert.Equal(expectedPublisher, actualPublisher);
+        }
     }
 }
