@@ -13,8 +13,18 @@ namespace Fisher.Bookstore.Api.Models
 
         public string ISBN { get; set; }
 
-        public DateTime publicationDate { get; set; }
+        public DateTime PublishDate { get; set; }
 
         public string Publisher { get; set; }
+
+        public void ChangePublicationDate(DateTime dateTime)
+        {
+            this.PublishDate = dateTime;
+        }
+
+        public void ChangePublisher(string publisher)
+        {
+            this.Publisher = publisher;
+        }
     }
 }
